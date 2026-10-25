@@ -10,8 +10,6 @@ import {
 // 导航只在这里定义一份，侧栏、面包屑、手机端都读它
 export type NavItem = { title: string; url: string; icon: LucideIcon; badge?: string }
 
-export const productName = "产品名"
-
 export const mainNav: NavItem[] = [
   { title: "首页", url: "/", icon: HomeIcon },
   { title: "AI 对话", url: "/chat", icon: SparklesIcon },

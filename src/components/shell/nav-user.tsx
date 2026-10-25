@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ChevronsUpDownIcon, LanguagesIcon, LogOutIcon, SettingsIcon, CircleHelpIcon } from "lucide-react"
+import { ChevronsUpDownIcon, LogOutIcon, SettingsIcon, CircleHelpIcon } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
@@ -48,10 +48,6 @@ export function NavUser() {
                   <SettingsIcon />
                   设置
                 </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <LanguagesIcon />
-                语言：简体中文
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CircleHelpIcon />

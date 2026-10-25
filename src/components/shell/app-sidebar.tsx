@@ -19,7 +19,8 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { mainNav, productName, projects } from "@/config/nav"
+import { mainNav, projects } from "@/config/nav"
+import { site } from "@/config/site"
 import { NavUser } from "@/components/shell/nav-user"
 
 // 侧栏：可收成图标条（collapsible="icon"），状态记在 cookie，⌘B 切换，手机端自动变抽屉
@@ -34,12 +35,11 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-sm font-semibold text-primary-foreground">
-                  P
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={site.logo} alt="" className="size-8 rounded-lg" />
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">{productName}</span>
-                  <span className="truncate text-xs text-muted-foreground">个人版</span>
+                  <span className="truncate font-semibold">{site.name}</span>
+                  <span className="truncate text-xs text-muted-foreground">{site.plan}</span>
                 </div>
               </Link>
             </SidebarMenuButton>

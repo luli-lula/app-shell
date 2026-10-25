@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { titleOf } from "@/config/nav"
 
-// 顶栏：收起侧栏按钮 + 当前页标题 + 搜索入口 + 语言切换
+// 顶栏：收起侧栏按钮 + 当前页标题 + 搜索入口（语言在「设置 → 偏好」里切换）
 export function SiteHeader() {
   const pathname = usePathname()
 
@@ -24,7 +24,6 @@ export function SiteHeader() {
           搜索…
           <Kbd className="ml-auto">⌘K</Kbd>
         </Button>
-        <Button variant="ghost" size="sm">中 / EN</Button>
       </div>
     </header>
   )
