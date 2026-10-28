@@ -1,5 +1,6 @@
 "use client"
 
+import { useTheme } from "next-themes"
 import { toast } from "sonner"
 
 import {
@@ -25,6 +26,7 @@ import { currentUser } from "@/config/nav"
 
 // 设置页：个人资料 / 偏好 / 账号 三个页签；保存后弹提示条
 export default function SettingsPage() {
+  const { theme, setTheme } = useTheme()
   const saved = () => toast.success("已保存")
 
   return (
@@ -69,7 +71,7 @@ export default function SettingsPage() {
               </div>
               <div className="flex items-center justify-between gap-4">
                 <div><Label>外观</Label><p className="text-xs text-muted-foreground">跟随系统，或固定浅色、深色</p></div>
-                <Select defaultValue="system">
+                <Select value={theme ?? "system"} onValueChange={setTheme}>
                   <SelectTrigger className="w-36"><SelectValue /></SelectTrigger>
                   <SelectContent><SelectItem value="system">跟随系统</SelectItem><SelectItem value="light">浅色</SelectItem><SelectItem value="dark">深色</SelectItem></SelectContent>
                 </Select>

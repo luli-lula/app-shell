@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { ThemeProvider } from "next-themes"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
@@ -16,10 +17,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" className={cn("h-full antialiased", geistSans.variable, geistMono.variable, "font-sans")}>
+    <html lang="zh-CN" suppressHydrationWarning className={cn("h-full antialiased", geistSans.variable, geistMono.variable, "font-sans")}>
       <body className="flex min-h-full flex-col">
-        <TooltipProvider>{children}</TooltipProvider>
-        <Toaster position="bottom-center" />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <TooltipProvider>{children}</TooltipProvider>
+          <Toaster position="bottom-center" />
+        </ThemeProvider>
       </body>
     </html>
   )

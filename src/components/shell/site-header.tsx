@@ -8,6 +8,7 @@ import { Kbd } from "@/components/ui/kbd"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { titleOf } from "@/config/nav"
+import { ThemeToggle } from "@/components/shell/theme-toggle"
 
 // 顶栏：收起侧栏按钮 + 当前页标题 + 搜索入口（语言在「设置 → 偏好」里切换）
 export function SiteHeader() {
@@ -24,6 +25,7 @@ export function SiteHeader() {
           搜索…
           <Kbd className="ml-auto">⌘K</Kbd>
         </Button>
+        <ThemeToggle />
       </div>
     </header>
   )

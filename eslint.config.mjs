@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // 第三方组件库拷贝进来的代码（AI Elements），不按本项目规则检查
+    "src/components/ai-elements/**",
+    "src/components/ui/carousel.tsx",
   ]),
 ]);
 
